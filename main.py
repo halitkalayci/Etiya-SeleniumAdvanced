@@ -128,4 +128,33 @@ if faturaOdenmedi:
 for i in range(10):
     print(i) # 10 kere çalıştı.
 
-#
+# list
+students = ["Halit","Janset","Recep","Hande","Betul","Batuhan","Nur"]
+
+# her bir öğrenciyi gez, o an hangi öğrencide isen ona student ismini ver.
+# iteration
+for student in students:
+    print(student + " ogrencisinin notu hesaplaniyor.")
+
+# range -> belirlenen aralık,bitiş ve başlangıç noktası ile iterasyon yapar.
+for i in range(10,20,2):
+    print(i)
+
+# yanındaki koşul sağlandığı sürece çalışır.
+# dolayısıyla döngü içinde durum değişikliği olmaz ise, sonsuz döngü olur.
+sayi = 0
+while sayi < 10:
+    print("Sonsuz dongu")
+    sayi += 1
+
+sifre = input("Şifrenizi giriniz: ")
+tryCount = 1
+while sifre != "1234":
+    tryCount += 1
+    if tryCount > 3:
+        print("3 kere yanlış şifre girildi. Kapatılıyor.")
+        break #break -> manual olarak döngüyü kır.
+    print("Şifre yanlış.")
+    sifre = input("Şifrenizi tekrar giriniz: ")
+
+#print("Başarılı giriş")

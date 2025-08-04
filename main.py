@@ -158,3 +158,10 @@ while sifre != "1234":
     sifre = input("Şifrenizi tekrar giriniz: ")
 
 #print("Başarılı giriş")
+
+students = ["Halit","Janset","Recep","Hande","Betul","Batuhan","Nur"]
+
+for student in students:
+    if student == "Recep":
+        continue # Bu adımdaki kalan kısımdaki kodları çalıştırma, sonraki iterasyona geç.
+    print(student)

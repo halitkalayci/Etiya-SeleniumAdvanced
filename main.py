@@ -30,3 +30,31 @@ Name = "Halit"
 
 title = "Etiya Homepage"#......
 
+
+# Operatörler 
+
+# Matematiksel (Aritmetik Operatörler)
+print(1 + 1) 
+print(5 - 2)
+print(5 * 5)
+print(31 / 4) # Sonuç float
+print(31 // 4) # Sonucu int olarak istiyorsak (her zaman aşağı yuvarlama.)
+print(100 % 3) # Mod 
+print(5 ** 2) #Üs alma
+#
+
+# boolean, bool -> True,False
+isActive = False
+# Karşılaştırma Operatörleri
+print(1 == 1) # Değer karşılaştırma -> İki taraf aynı mı?
+print(1 == 2)
+print(1 != 2) # İki taraf farklı mı?
+
+faturaBedeli = 100
+print(faturaBedeli > 50)
+print(50 < 100)
+print(150 >= 50)
+print(50 <= 50)
+#
+
+#

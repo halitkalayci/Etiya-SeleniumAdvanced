@@ -57,4 +57,26 @@ print(150 >= 50)
 print(50 <= 50)
 #
 
+# Atama Operatörleri
+
+a = 5 #atama
+a += 3 # a+3 
+print(a)
+a *= 3
+print(a)
+a //= 3
+print(a)
+#
+
+
+# Mantıksal Operatöler
+# and-or
+ogrenci = True
+yas = 18
+
+print(ogrenci == True and yas >= 20) # and -> true-true 
+print(ogrenci == True or yas >= 20) # or -> iki koşuldan bir tanesinin true olması yeterli
+
+# and her zaman önceliklidir (parantez yoksa)
+print(True and True or False and True)
 #

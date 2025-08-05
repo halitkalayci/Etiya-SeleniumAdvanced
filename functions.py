@@ -28,12 +28,20 @@ tax4 = calculate_tax(200)
 
 
 print("**************")
-import mathematich # custom
 import os # built-in
 import requests # third-party
 
-print(mathematich.add(1,2))
+#import mathematich
+
 response = requests.get("https://jsonplaceholder.typicode.com/todos/1")
 print(response.json())
-
 #os.mkdir("deneme")
+
+
+# alias
+from mathematich import add as ekle # math. modülünden yalnızca addi import eder. add'i ekle ismiyle kullan.
+print(ekle(1,2))
+
+import mathematich #bütün mathematich modülünü import eder.
+print(mathematich.add(1,2))
+ekle(5,10)

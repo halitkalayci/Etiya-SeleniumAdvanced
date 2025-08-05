@@ -25,3 +25,15 @@ tax3 = calculate_tax(400)
 
 
 tax4 = calculate_tax(200)
+
+
+print("**************")
+import mathematich # custom
+import os # built-in
+import requests # third-party
+
+print(mathematich.add(1,2))
+response = requests.get("https://jsonplaceholder.typicode.com/todos/1")
+print(response.json())
+
+#os.mkdir("deneme")

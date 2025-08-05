@@ -49,3 +49,8 @@ login_success()
 login_error_wrong_password()
 
 time.sleep(5000)
+
+# 1. test case => kilitli kullanıcı giriş testi -> Mesajın "Epic sadface: Sorry, this user has been locked out." olması
+# 2. test case => username boş gönderilme testi -> Epic sadface: Username is required
+# 3. test case => password boş gönderilme testi ->
+# 4. test case -> Ana sayfada ürün sayısını bulan fonks.

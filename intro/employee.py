@@ -6,7 +6,7 @@ class Employee():
     # write-only read-only
     def set_name(self,name):
         if len(name) < 2:
-            return
+            return # kodu burada kes, devam ettirme.
         self.__name = name
     def get_name(self):
         return self.__name

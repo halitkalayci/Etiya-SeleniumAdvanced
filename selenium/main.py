@@ -45,8 +45,27 @@ def login_error_wrong_password():
     login_btn = driver.find_element(By.ID, "login-button")
     login_btn.click()
 
-login_success()
+    error_container = driver.find_element(By.XPATH, "//*[@data-test='error']")
+
+    if error_container.value_of_css_property("display") == "none":
+        print("Element hiç gözükmedi.")
+    if error_container.text != "Epic sadface: Username and password do not match any user in this service":
+        print("Mesaj yanlış.")
+
+def product_count_test():
+    driver.get("https://www.saucedemo.com/v1/inventory.html")
+    driver.maximize_window()
+
+    inv_container = driver.find_element(By.ID, "inventory_container")
+
+    inv_items = inv_container.find_elements(By.CLASS_NAME, "inventory_item")
+
+    print(len(inv_items) == 6)
+
+
+#login_success()
 login_error_wrong_password()
+#product_count_test()
 
 time.sleep(5000)
 

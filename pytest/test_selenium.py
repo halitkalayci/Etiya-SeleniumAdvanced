@@ -2,10 +2,15 @@ from selenium.webdriver import Chrome
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
+from selenium.webdriver.chrome.options import Options
 import pytest 
 @pytest.mark.parametrize("username,password", [("standard_user","secret_sauce")])
 def test_login(username,password):
-    driver = Chrome()
+    #headless
+    options = Options()
+    options.add_argument(argument="--headless")
+
+    driver = Chrome(options=options)
     driver.get("https://www.saucedemo.com/v1/index.html")
     wait = WebDriverWait(driver, 10)
     

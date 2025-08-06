@@ -11,6 +11,12 @@ def test_valid_login(driver):
     login_page.login("standard_user","secret_sauce")
     assert driver.current_url == "https://www.saucedemo.com/v1/inventory.html"
 
+def test_validation(driver):
+    login_page = LoginPage(driver)
+    login_page.load()
+    login_page.login("","")
+    assert login_page.get_error_message() == "Epic sadface: Username is required"
+
 def test_invalid_login(driver):
     login_page = LoginPage(driver)
     login_page.load()

@@ -17,3 +17,5 @@ class InventoryPage():
     def change_sort(self):
         dropdown = Select(self.driver.find_element(*self.sort_dropdown))
         dropdown.select_by_value("za")
+
+# POM mimarisine uygun inventory pagede kendi belirlediğimiz 3 farklı test case'i yazalım.

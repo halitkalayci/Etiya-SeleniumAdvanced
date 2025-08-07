@@ -1,13 +1,7 @@
-# Yeteneklerin farklı 
-# veriler/sıralar ile çağırılarak testlerin yazılması.
-
-#class TestLogin():
-   # def test_valid_login(self):
 from pages.login_page import LoginPage
+from utils.csv_reader import read_csv_data
+import pytest
 
-#DRY Principle -> Don't Repeat Yourself
-#SOLID
-# CTRL SHIFT P
 def test_valid_login(driver):
     login_page = LoginPage(driver)
     login_page.load()
@@ -20,8 +14,13 @@ def test_validation(driver):
     login_page.login("","")
     assert login_page.get_error_message() == "Epic sadface: Username is required"
 
-def test_invalid_login(driver):
+@pytest.mark.parametrize("username,password", [("abc123","1234")])
+def test_invalid_login(driver, username, password):
     login_page = LoginPage(driver)
     login_page.load()
-    login_page.login("standard_user","secret_sauce123")
+    login_page.login(username,password)
     assert login_page.get_error_message() == "Epic sadface: Username and password do not match any user in this service"
+
+
+# run-time -> kodun çalıştığı an
+# compile-time -> kodun çalıştırılabilir hale getirildiği an (build)

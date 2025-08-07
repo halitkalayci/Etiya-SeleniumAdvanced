@@ -5,6 +5,9 @@
    # def test_valid_login(self):
 from pages.login_page import LoginPage
 
+#DRY Principle -> Don't Repeat Yourself
+#SOLID
+# CTRL SHIFT P
 def test_valid_login(driver):
     login_page = LoginPage(driver)
     login_page.load()

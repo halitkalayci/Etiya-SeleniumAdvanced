@@ -3,6 +3,7 @@ import pytest
 from selenium.webdriver import Chrome
 from selenium.webdriver.chrome.options import Options
 from utils.screenshot import take_screenshot
+from pytest_html.extras import image
 @pytest.fixture # bütün test fonksiyonlarına enjekte edilecek bağımlılık.
 def driver():
     options = Options()
@@ -16,7 +17,11 @@ def driver():
 def pytest_runtest_makereport(item,call):
     outcome = yield
     report = outcome.get_result()
+    extra = getattr(report, "extra", []) # raporun içindeki extra isimli değişkeni al yoksa boş liste olarak ata.
     if report.when == "call":
         driver = item.funcargs.get("driver", None)
         if driver is not None:
-            take_screenshot(driver, item.name)
+            file_path = take_screenshot(driver, item.name)
+
+            extra.append(image(file_path))
+        report.extra = extra

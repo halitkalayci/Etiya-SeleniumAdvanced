@@ -12,4 +12,12 @@ def take_screenshot(driver, name="screenshot"):
     file_path = "project/"+os.path.join(date_folder_name, file_name)
     
     driver.save_screenshot(file_path)
-    return file_path
+    # Absolute Path
+    absolute_path = os.path.abspath(file_path)
+    #
+    return absolute_path
+
+# Sıfır bir klasörde
+# POM mimarisiyle
+# Kendi frontend yapımızda
+# Basit 1-2 sayfanın 1-2 test caseini oluşturalım.

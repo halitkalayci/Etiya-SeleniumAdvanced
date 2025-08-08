@@ -3,6 +3,7 @@ def take_screenshot(driver, name="screenshot"):
     from datetime import datetime
 
     # Proje dizininin tam yolunu al
+    # CWD => Current Working Directory
     project_root = os.path.abspath(os.getcwd())
 
     # Her çalıştırmada o günün tarihinin bir klasörü oluşsun, içerisine ss'ler atılsın.

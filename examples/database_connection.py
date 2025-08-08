@@ -8,6 +8,19 @@ connection = psycopg2.connect(
     password="1234"
 )
 
-print(connection.info.status)
+cursor = connection.cursor()
+
+cursor.execute("SELECT version();")
+
+ver = cursor.fetchone()
+
+print(ver)
+
+cursor.execute("Select * from users;")
+
+users = cursor.fetchall()
+
+for row in users:
+    print(f"User id: {row[0]} Name: {row[1]}")
 
 connection.close()
